@@ -479,7 +479,7 @@ function DarkLib:Window()
 			ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
 		end
 
-		function Cont:Slider(text, min, max, callback)
+		function Cont:Slider(text, min, max, callback,default)
 			local dragging = false
 			local Slider = Instance.new("TextButton")
 			local SliderUICorner = Instance.new("UICorner")
@@ -547,10 +547,12 @@ function DarkLib:Window()
 			Value.BorderSizePixel = 0
 			Value.Size = UDim2.new(1, 0, 1, 0)
 			Value.Font = Enum.Font.Gotham
-			Value.Text = min
+			Value.Text = default and tostring(default) or min
 			Value.TextColor3 = Color3.fromRGB(195, 195, 195)
 			Value.TextSize = 14.000
-
+			if default then
+                pcall(callback, s)
+            end
 			local function slide(input)
 				local pos =
 					UDim2.new(
