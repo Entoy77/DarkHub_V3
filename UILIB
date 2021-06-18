@@ -551,7 +551,7 @@ function DarkLib:Window()
 			Value.TextColor3 = Color3.fromRGB(195, 195, 195)
 			Value.TextSize = 14.000
 			if default then
-                pcall(callback, s)
+                pcall(callback, default)
             end
 			local function slide(input)
 				local pos =
