@@ -295,7 +295,7 @@ local function BloxcrusherBanner()
             end
         end)        
     end    
-    BloxcrusherBanner()
+    --BloxcrusherBanner()
     
 	MakeDraggable(DraggableFrame, MainFrame)
 	local Win = {}
