@@ -4,13 +4,7 @@ end
 game:GetService("UserInputService").InputBegan:connect(
     function(key, gpe)
         if key.KeyCode == Enum.KeyCode.RightControl then
-            pcall(
-                function()
-                    for i, v in pairs(game.CoreGui.MarkBeatsIsGay:GetChildren()) do
-                        v.Visible = not v.Visible
-                    end
-                end
-            )
+            game.CoreGui.MarkBeatsIsGay.Enabled = not game.CoreGui.MarkBeatsIsGay.Enabled
         end
     end
 )
